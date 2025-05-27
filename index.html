@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roadmap to MIT - Master's or PhD in Computer Science</title>
+    <title>Dual Roadmap: MIT EECS & ASU Economics</title>
     <style>
         /* Base Styles */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: #333;
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
             background-color: #f9f9f9;
@@ -18,24 +18,39 @@
 
         /* Typography */
         h1 {
-            color: #8B0000; /* MIT Red */
+            color: #222;
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 10px;
             font-size: 2.2em;
-            border-bottom: 2px solid #8B0000;
-            padding-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #555;
+            margin-bottom: 30px;
+            font-size: 1.1em;
         }
 
         h2 {
-            color: #0F4D92; /* Dark Blue */
-            margin-top: 30px;
+            margin-top: 40px;
             font-size: 1.6em;
-            border-left: 4px solid #0F4D92;
             padding-left: 10px;
+            border-radius: 4px;
+        }
+
+        .mit h2 {
+            background-color: rgba(139, 0, 0, 0.1); /* MIT Red tint */
+            border-left: 4px solid #8B0000;
+            color: #8B0000;
+        }
+
+        .asu h2 {
+            background-color: rgba(134, 38, 51, 0.1); /* ASU Maroon tint */
+            border-left: 4px solid #862633;
+            color: #862633;
         }
 
         h3 {
-            color: #0F4D92;
             margin-top: 20px;
             font-size: 1.3em;
         }
@@ -48,9 +63,19 @@
             border-radius: 5px;
         }
 
-        .phase {
-            margin-bottom: 40px;
+        .roadmap {
+            margin-bottom: 50px;
             page-break-inside: avoid;
+        }
+
+        .dual-column {
+            display: flex;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .dual-column > div {
+            flex: 1;
         }
 
         /* Lists */
@@ -63,7 +88,7 @@
             position: relative;
         }
 
-        li:before {
+        .mit li:before {
             content: "•";
             color: #8B0000;
             font-weight: bold;
@@ -72,9 +97,26 @@
             margin-left: -1em;
         }
 
+        .asu li:before {
+            content: "•";
+            color: #862633;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
         .checklist li:before {
             content: "✓";
+            font-weight: bold;
+        }
+
+        .mit .checklist li:before {
             color: #228B22;
+        }
+
+        .asu .checklist li:before {
+            color: #FFC627; /* ASU Gold */
         }
 
         /* Tables */
@@ -91,8 +133,13 @@
             text-align: left;
         }
 
-        th {
-            background-color: #0F4D92;
+        .mit th {
+            background-color: #8B0000;
+            color: white;
+        }
+
+        .asu th {
+            background-color: #862633;
             color: white;
         }
 
@@ -102,11 +149,20 @@
 
         /* Highlight Box */
         .highlight {
-            background-color: #f8f4e6;
-            border-left: 4px solid #FFD700;
             padding: 15px;
             margin: 20px 0;
             font-style: italic;
+            border-radius: 4px;
+        }
+
+        .mit .highlight {
+            background-color: #f8f4e6;
+            border-left: 4px solid #FFD700;
+        }
+
+        .asu .highlight {
+            background-color: #f0f7ff;
+            border-left: 4px solid #FFC627;
         }
 
         /* Timeline */
@@ -121,7 +177,7 @@
             padding-bottom: 15px;
         }
 
-        .timeline-item:before {
+        .mit .timeline-item:before {
             content: "";
             position: absolute;
             left: -20px;
@@ -132,14 +188,35 @@
             background-color: #8B0000;
         }
 
-        .timeline-item:after {
+        .asu .timeline-item:before {
+            content: "";
+            position: absolute;
+            left: -20px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #862633;
+        }
+
+        .mit .timeline-item:after {
             content: "";
             position: absolute;
             left: -15px;
             top: 17px;
             bottom: -15px;
             width: 2px;
-            background-color: #0F4D92;
+            background-color: #8B0000;
+        }
+
+        .asu .timeline-item:after {
+            content: "";
+            position: absolute;
+            left: -15px;
+            top: 17px;
+            bottom: -15px;
+            width: 2px;
+            background-color: #862633;
         }
 
         .timeline-item:last-child:after {
@@ -187,209 +264,169 @@
 </head>
 <body>
     <div class="container">
-        <h1>Roadmap to MIT – Master's or PhD in Computer Science (via IIT)</h1>
+        <h1>Dual Academic Roadmap</h1>
+        <p class="subtitle">Combining Technical Excellence at MIT with Liberal Arts Foundation at ASU</p>
         
-        <div class="phase">
-            <h2>Phase 1: Class 12 (2025–2026)</h2>
-            <h3>Academics</h3>
-            <ul>
-                <li>Physics: <strong>95+</strong></li>
-                <li>Chemistry: <strong>95+</strong></li>
-                <li>Maths: <strong>95+</strong></li>
-                <li>English: <strong>90+</strong></li>
-                <li>Computer Science/IP: <strong>95+</strong> (if applicable)</li>
-            </ul>
-            
-            <h3>Entrance Exams</h3>
-            <ul>
-                <li><strong>JEE Main</strong> (Jan & April 2026): Target <strong>99.5+ percentile</strong></li>
-                <li><strong>JEE Advanced</strong> (May 2026): Target <strong>Top 500 rank</strong></li>
-            </ul>
-            
-            <h3>Goal</h3>
-            <p>Get into <strong>IIT Bombay/Delhi/Madras/others</strong> with <strong>CS or related branch</strong>.</p>
-        </div>
-        
-        <div class="phase">
-            <h2>Phase 2: BTech at IIT (2026–2030)</h2>
-            <h3>1. Academic Excellence</h3>
-            <ul>
-                <li>Target CGPA: <strong>9.0+/10</strong></li>
-            </ul>
-            
-            <h3>2. Research</h3>
-            <ul>
-                <li>Work under IIT professors from <strong>Year 2</strong></li>
-                <li>Apply to <strong>MITACS, DAAD, SN Bose</strong> internships</li>
-                <li>Publish <strong>1–2 research papers</strong> in top conferences (NeurIPS, ICML, IEEE)</li>
-            </ul>
-            
-            <h3>3. Coding & Projects</h3>
-            <ul>
-                <li>Contribute to <strong>Open Source</strong></li>
-                <li>Build serious <strong>AI/ML or Systems Projects</strong></li>
-                <li>Participate in <strong>Hackathons, GSoC, Competitions</strong></li>
-            </ul>
-            
-            <h3>4. Exams</h3>
-            <ul>
-                <li><strong>GRE</strong> (mid-2029):
+        <div class="dual-column">
+            <div class="roadmap mit">
+                <h2>MIT Path – Master's/PhD in EECS</h2>
+                
+                <div class="phase">
+                    <h3>Phase 1: Class 12 (2025–2026)</h3>
+                    <h4>Academics</h4>
                     <ul>
-                        <li>Verbal: <strong>160+</strong></li>
-                        <li>Quant: <strong>168–170</strong></li>
-                        <li>AWA: <strong>4.5+</strong></li>
+                        <li>Physics: <strong>95+</strong></li>
+                        <li>Chemistry: <strong>95+</strong></li>
+                        <li>Maths: <strong>95+</strong></li>
+                        <li>Computer Science/IP: <strong>95+</strong></li>
                     </ul>
-                </li>
-                <li><strong>TOEFL/IELTS</strong> (late 2029):
+                    
+                    <h4>Entrance Exams</h4>
                     <ul>
-                        <li>TOEFL: <strong>110+</strong></li>
-                        <li>IELTS: <strong>7.5+</strong></li>
+                        <li><strong>JEE Main</strong>: Target <strong>99.5+ percentile</strong></li>
+                        <li><strong>JEE Advanced</strong>: Target <strong>Top 500 rank</strong></li>
                     </ul>
-                </li>
-            </ul>
-        </div>
-        
-        <div class="phase">
-            <h2>Phase 3: MIT Application (Aug–Dec 2029)</h2>
-            <h3>Documents</h3>
-            <ul>
-                <li><strong>SOP</strong>: Strong motivation and research alignment</li>
-                <li><strong>LORs</strong>: From IIT professors you've worked with</li>
-                <li><strong>Resume</strong>: Highlight GPA, projects, papers, internships</li>
-            </ul>
+                </div>
+                
+                <div class="phase">
+                    <h3>Phase 2: BTech at IIT (2026–2030)</h3>
+                    <ul>
+                        <li>Target CGPA: <strong>9.0+/10</strong></li>
+                        <li>Publish <strong>1–2 papers</strong> in top conferences</li>
+                        <li><strong>GRE</strong>: Quant 168-170, Verbal 160+</li>
+                        <li><strong>TOEFL</strong>: 110+</li>
+                    </ul>
+                </div>
+                
+                <div class="phase">
+                    <h3>Phase 3: MIT Application (2029)</h3>
+                    <ul>
+                        <li><strong>Research-focused SOP</strong></li>
+                        <li>3 <strong>strong LORs</strong> from IIT professors</li>
+                        <li>Apply by <strong>Dec 15, 2029</strong></li>
+                    </ul>
+                </div>
+                
+                <div class="highlight">
+                    <p>"The EECS program at MIT combines rigorous theory with groundbreaking innovation."</p>
+                </div>
+            </div>
             
-            <h3>Apply to:</h3>
-            <ul>
-                <li><strong>PhD in EECS at MIT</strong> (May exit with SM – Master of Science – in 2–3 years)</li>
-            </ul>
-            
-            <h3>Deadline:</h3>
-            <p>Around <strong>December 15, 2029</strong></p>
-        </div>
-        
-        <div class="phase">
-            <h2>MIT Program Structure</h2>
-            <h3>PhD in EECS (What You Apply For):</h3>
-            <table>
-                <tr>
-                    <th>Duration</th>
-                    <th>Activities</th>
-                </tr>
-                <tr>
-                    <td>Years 1–2</td>
-                    <td>Coursework + Qualifiers</td>
-                </tr>
-                <tr>
-                    <td>Years 3–4</td>
-                    <td>Research + Papers</td>
-                </tr>
-                <tr>
-                    <td>Years 5–6</td>
-                    <td>Thesis + Defense</td>
-                </tr>
-            </table>
-            <p><em>Option to exit early with SM degree (Master of Science)</em></p>
-            <p><strong>Note:</strong> MEng is only for MIT undergraduates</p>
-        </div>
-        
-        <div class="phase">
-            <h2>MIT CS PhD Requirements (for IIT Students)</h2>
-            <table>
-                <tr>
-                    <th>Category</th>
-                    <th>Requirement</th>
-                    <th>Target for You (IIT Applicant)</th>
-                </tr>
-                <tr>
-                    <td>Academic Degree</td>
-                    <td>4-year UG degree (Engineering, Science, etc.)</td>
-                    <td>BTech from IIT (2026–2030)</td>
-                </tr>
-                <tr>
-                    <td>CGPA / GPA</td>
-                    <td>Strong academic performance</td>
-                    <td>9.0+/10 (or Top 5% of class)</td>
-                </tr>
-                <tr>
-                    <td>GRE (Optional)</td>
-                    <td>General GRE (not required but helpful)</td>
-                    <td>Verbal: 160+<br>Quant: 168–170<br>AWA: 4.5+</td>
-                </tr>
-                <tr>
-                    <td>TOEFL/IELTS</td>
-                    <td>Required for international applicants</td>
-                    <td>TOEFL: 110+<br>IELTS: 7.5–8.0+</td>
-                </tr>
-                <tr>
-                    <td>Research Experience</td>
-                    <td>Strongly preferred</td>
-                    <td>1–2 papers in top conferences (ICML, IEEE, etc.)</td>
-                </tr>
-                <tr>
-                    <td>Letters of Rec. (LORs)</td>
-                    <td>3 strong recommendation letters</td>
-                    <td>From IIT professors you've worked with</td>
-                </tr>
-                <tr>
-                    <td>Statement of Purpose</td>
-                    <td>Required</td>
-                    <td>Clear goals + research alignment with MIT</td>
-                </tr>
-                <tr>
-                    <td>Resume/CV</td>
-                    <td>Required</td>
-                    <td>Highlight GPA, internships, research, achievements</td>
-                </tr>
-                <tr>
-                    <td>Coding/Projects</td>
-                    <td>Expected</td>
-                    <td>Open-source, AI/ML systems, hackathons</td>
-                </tr>
-                <tr>
-                    <td>Application Deadline</td>
-                    <td>December (for Fall 2030 intake)</td>
-                    <td>Apply by Dec 15, 2029</td>
-                </tr>
-            </table>
-        </div>
-        
-        <div class="phase">
-            <h2>Bonus Ways to Strengthen Profile</h2>
-            <ul class="checklist">
-                <li>Google Summer of Code (GSoC)</li>
-                <li>ICPC, Codeforces, or other coding contests</li>
-                <li>Research collaborations with MIT professors</li>
-                <li>Present papers at top conferences</li>
-                <li>Create strong GitHub profile or personal website</li>
-                <li>Connect with MIT students and alumni via LinkedIn</li>
-            </ul>
-        </div>
-        
-        <div class="phase">
-            <h2>Summary Timeline</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <strong>2025–2026:</strong> Excel in Boards & Crack JEE
+            <div class="roadmap asu">
+                <h2>ASU Path – BS in Economics (Liberal Arts)</h2>
+                
+                <div class="phase">
+                    <h3>Phase 1: Class 12 (2025–2026)</h3>
+                    <h4>Academics</h4>
+                    <ul>
+                        <li>Maths: <strong>90+</strong></li>
+                        <li>Economics: <strong>95+</strong></li>
+                        <li>English: <strong>90+</strong></li>
+                        <li>Social Sciences: <strong>90+</strong></li>
+                    </ul>
+                    
+                    <h4>Entrance Requirements</h4>
+                    <ul>
+                        <li><strong>SAT</strong>: Target <strong>1350+</strong></li>
+                        <li><strong>TOEFL</strong>: 90+ (if applicable)</li>
+                        <li>Strong <strong>personal statement</strong></li>
+                    </ul>
                 </div>
-                <div class="timeline-item">
-                    <strong>2026–2030:</strong> BTech @ IIT – GPA, Research, GRE/TOEFL
+                
+                <div class="phase">
+                    <h3>Phase 2: BS at ASU (2026–2030)</h3>
+                    <h4>Core Focus Areas</h4>
+                    <ul class="checklist">
+                        <li>Economic Theory & Quantitative Methods</li>
+                        <li>Political Economy & Public Policy</li>
+                        <li>Behavioral Economics</li>
+                        <li>Data Analysis (R/Python)</li>
+                    </ul>
+                    
+                    <h4>Key Opportunities</h4>
+                    <ul>
+                        <li><strong>Research</strong>: W.P. Carey School projects</li>
+                        <li><strong>Internships</strong>: Fed Reserve, economic think tanks</li>
+                        <li><strong>Study Abroad</strong>: LSE, Bocconi exchanges</li>
+                        <li>Maintain <strong>3.7+ GPA</strong></li>
+                    </ul>
                 </div>
-                <div class="timeline-item">
-                    <strong>Late 2029:</strong> Apply to MIT PhD in EECS
+                
+                <div class="phase">
+                    <h3>Career Pathways</h3>
+                    <table>
+                        <tr>
+                            <th>Path</th>
+                            <th>Preparation</th>
+                        </tr>
+                        <tr>
+                            <td>PhD Economics</td>
+                            <td>Advanced Math courses, RA positions</td>
+                        </tr>
+                        <tr>
+                            <td>Policy Analysis</td>
+                            <td>Public policy electives, DC internships</td>
+                        </tr>
+                        <tr>
+                            <td>Economic Consulting</td>
+                            <td>Case competitions, econometrics focus</td>
+                        </tr>
+                    </table>
                 </div>
-                <div class="timeline-item">
-                    <strong>Fall 2030:</strong> Begin studies at MIT (PhD or SM)
+                
+                <div class="highlight">
+                    <p>"ASU's liberal arts approach provides interdisciplinary flexibility with strong quantitative rigor."</p>
                 </div>
             </div>
         </div>
         
-        <div class="highlight">
-            <h2>Motivational Note</h2>
-            <p>I am Tony Stark.</p>
+        <div class="roadmap">
+            <h2>Combined Timeline</h2>
+            <table>
+                <tr>
+                    <th>Year</th>
+                    <th>MIT EECS Path</th>
+                    <th>ASU Economics Path</th>
+                </tr>
+                <tr>
+                    <td>2025-26</td>
+                    <td>JEE Preparation</td>
+                    <td>SAT/Application Prep</td>
+                </tr>
+                <tr>
+                    <td>2026-28</td>
+                    <td>IIT Years 1-2: Foundational CS</td>
+                    <td>ASU Years 1-2: Core Economics</td>
+                </tr>
+                <tr>
+                    <td>2028-29</td>
+                    <td>Research Papers + GRE</td>
+                    <td>Specialization + Internships</td>
+                </tr>
+                <tr>
+                    <td>2029-30</td>
+                    <td>MIT Applications</td>
+                    <td>Thesis/Capstone Project</td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="roadmap">
+            <h2>Synergy Between Programs</h2>
+            <ul class="checklist">
+                <li><strong>Technical Economics</strong>: Apply ML/AI from EECS to economic modeling</li>
+                <li><strong>Policy Tech</strong>: Bridge tech development with economic policy insights</li>
+                <li><strong>Research</strong>: Combine CS methods with economic analysis</li>
+                <li><strong>Entrepreneurship</strong>: Technical skills + market understanding</li>
+            </ul>
+            
+            <div class="highlight">
+                <p>"The combination of MIT's technical excellence and ASU's liberal arts approach creates a unique interdisciplinary profile."</p>
+            </div>
         </div>
         
         <footer>
-            <p>Created with MIT's spirit of excellence | Last updated: 2025</p>
+            <p>Dual Roadmap | MIT EECS + ASU Economics | Last updated: 2025</p>
         </footer>
     </div>
 </body>
